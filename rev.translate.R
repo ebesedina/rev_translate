@@ -36,7 +36,7 @@ input = c(
 GeneAliases <- fread("/g/strcombio/fsupek_data/users/ebesedina/dCdF/data/GeneAliases_geneNames.txt", sep="\t", quote="") #new
 
 # script ------------------------------------------------------------------
-#not working if aminoacid is spanning 2 exons
+# if aminoacid is spanning 2 exons than the intron is retained
 rev_translate = function(gene_symbol, pchanges) {
   
   genes(txdb, columns = "GENEID") -> gns
