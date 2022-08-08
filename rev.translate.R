@@ -128,8 +128,8 @@ rev_translate = function(gene_symbol, pchanges) {
           tx_pos_3p = protein_pos*3
           reorder_cds = cds_in_tx[order_idx]
           lengths(reorder_cds) %>% cumsum() -> csums
-          tx_pos_5p_id = which(tx_pos_5p < csums)[1]
-          tx_pos_3p_id = which(tx_pos_3p < csums)[1]
+          tx_pos_5p_id = which(tx_pos_5p <= csums)[1]
+          tx_pos_3p_id = which(tx_pos_3p <= csums)[1]
           tx_pos_5p_id
           ### here i remove all the extra positions that are contained in the
           ### other cds.
